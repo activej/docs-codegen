@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://codegen.activej.io/sitemap.xml

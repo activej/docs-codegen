@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176574648-1"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-176574648-1');
+    </script>
+    
+    <link rel='stylesheet' href='/static/css/pygment_trac.css'/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <title>ActiveJ Codegen | Dynamic bytecode generator with minimal overhead and convenient API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=" ActiveJ Codegen is a dynamic bytecode generator with minimal overhead and convenient API ">
+    <meta name="keywords" content=" bytecode,bytecode generator,code generator,runtime code generator,runtime query processing,java,java library ">
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+    <meta name="og:description" content="ActiveJ is an alternative Java platform built from the ground up as a replacement of Spring, Spark, Quarkus, Micronauts, and other solutions. It is minimalistic, boilerplate-free, and provides outstanding performance." />
+    <meta name="og:image" content="https://activej.io/static/images/AJ_Card.jpeg" />
+    <meta name="og:title" content="ActiveJ - An Alternative Java platform built for web, high load, and cloud development" />
+</head>
+<body>
+    <div class="navbar-container-wrapper">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light p-0">
+            <ul class="navbar-nav-visible mr-auto mt-1 mt-lg-0">
+                <div class="logo-link-title mr-5">
+                    <img src="/favicon.png" style="max-width: 25px">
+                    
+                    
+                    
+                    
+                    <a class="navbar-nav__link logo-link-title" href="/" style="margin-left: 5px">ActiveJ Codegen</a>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </ul>
+            <button class="navbar-toggler m-1 ml-auto" type="button" data-toggle="collapse" data-target="#navbarToggler"
+                    aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <div class="container">
+                    
+                    
+                    
+                    
+                    <ul class="navbar-nav navbar-nav-visible mr-auto mt-1 mt-lg-0">
+                        
+                        <li>
+                            <a class="navbar-nav__link nav-expanded" href="/examples.html">
+                                Examples
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+                <span>
+              <ul class="navbar-nav expanded-links navbar-nav-visible mr-auto mt-1 mt-lg-0">
+                  <li class="dropdown">
+                    <a class="nav-link nav-expanded">Components</a>
+                    <ul class="dropdown__content">
+                        
+                            <div class="dropdown__content-wrapper">
+                                
+                                    <a href="https://activej.io" class="dropdown__content__item ">
+                                        <li>
+                                            <div href="https://activej.io">ActiveJ</div>
+                                        </li>
+                                        <p class="dropdown__content__item__text"> Redefining Java for modern web applications </p>
+                                    </a>
+                                
+                                    <a href="https://inject.activej.io" class="dropdown__content__item ">
+                                        <li>
+                                            <div href="https://inject.activej.io">ActiveJ Inject</div>
+                                        </li>
+                                        <p class="dropdown__content__item__text"> Lightning-fast and ultimately powerful DI library </p>
+                                    </a>
+                                
+                                    <a href="https://serializer.activej.io" class="dropdown__content__item ">
+                                        <li>
+                                            <div href="https://serializer.activej.io">ActiveJ Serializer</div>
+                                        </li>
+                                        <p class="dropdown__content__item__text"> The fastest JVM serializer in the world </p>
+                                    </a>
+                                
+                                    <a href="https://codegen.activej.io" class="dropdown__content__item  selected-link ">
+                                        <li>
+                                            <div href="https://codegen.activej.io">ActiveJ Codegen</div>
+                                        </li>
+                                        <p class="dropdown__content__item__text"> Dynamic bytecode generation without overhead of reflection </p>
+                                    </a>
+                                
+                                    <a href="https://specializer.activej.io" class="dropdown__content__item ">
+                                        <li>
+                                            <div href="https://specializer.activej.io">ActiveJ Specializer</div>
+                                        </li>
+                                        <p class="dropdown__content__item__text"> A little bit of magic to speed up your code </p>
+                                    </a>
+                                
+                                    <a href="https://rpc.activej.io" class="dropdown__content__item ">
+                                        <li>
+                                            <div href="https://rpc.activej.io">ActiveJ RPC</div>
+                                        </li>
+                                        <p class="dropdown__content__item__text"> Lightning-fast binary protocol for microservices architecture </p>
+                                    </a>
+                                
+                                    <a href="https://fs.activej.io" class="dropdown__content__item ">
+                                        <li>
+                                            <div href="https://fs.activej.io">ActiveJ FS</div>
+                                        </li>
+                                        <p class="dropdown__content__item__text"> Tiny abstraction for managing local, remote, and distributed FS </p>
+                                    </a>
+                                
+                           </div>
+                        
+                    </ul>
+                </li>
+                  <li><a class="navbar-nav__link" href="https://activej.io/blog/release-notes.html">Blog</a> </li>
+                <li><a class="navbar-nav__link" href="http://uikernel.io">UIKernel</a></li>
+                <li><a class="navbar-nav__link" href="https://adkernel.com">AdKernel</a></li>
+                <li><a class="navbar-nav__link" href="https://github.com/activej/activej">GitHub</a></li>
+                <li><a class="navbar-nav__link" href="/about.html">About us</a></li>
+              </ul>
+            </span>
+            </div>
+        </nav>
+    </div>
+</div>
+
+    <div class="content">
+        
+            <div class="container-wrapper">
+    <div class="container">
+        <div class="slider">
+            <div class="slider__text">
+                <h1 id="animatedLogo" text="ActiveJ Codegen" class="mb-4 mt-4 slider__text__logo" align="center"></h1>
+                Dynamic runtime code generation without the overhead of reflection
+            </div>
+        </div>
+        <div class="container-radius pb-4">
+            <div class="row mx-0 slider-buttons">
+                <a href="examples.html" class="col-5 slider-buttons__get-started-button">
+                    EXAMPLES
+                </a>
+                <a href="https://github.com/activej/activej/tree/v4.3/core-codegen" target="_blank" class="col-4 slider-buttons__github-button">
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="paper__wrapper">
+    <div class="container features">
+        <h3 class="ml-3 mt-4">What is ActiveJ Codegen?</h3>
+        <div class="ml-3">ActiveJ Codegen is an efficient Java code generator with streamlined and simple API. It is
+            built
+            on top of ObjectWeb ASM and has zero-overhead performance. ActiveJ Codegen is widely utilised at
+            <a href="https://serializer.activej.io">ActiveJ Serializer</a>, making it the fastest JVM-based serializer
+            in the world.
+            <br>ActiveJ Codegen is one of the ActiveJ technologies, but it has minimal third-party dependencies and
+            can be used as a stand-alone component.
+        </div>
+        <h3 class="ml-3 mt-4">Why ActiveJ Codegen?</h3>
+        <ul>
+            <li>Utilizes powerful ASM library for code generation and manipulation</li>
+            <li>Provides concise Expressions API that provides Lisp-like DSL for describing new classes</li>
+            <li>Supports caching of generated classes</li>
+            <li>Suitable for dynamic class generation based on runtime parameters (e.g. query processing)</li>
+            <li>Supports relational algebra operations for individual items: aggregate functions, predicates, ordering,
+                group-by, etc.
+            </li>
+            <li>Features automatic type inference</li>
+            <li>Zero-overhead performance</li>
+            <li>Support for Records (heterogeneous data containers)</li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div class="container features transparent">
+        <h3 class="mt-2">ActiveJ Codegen use-case</h3>
+        <p class="features__text">ActiveJ Codegen can be used for code generation in different scenarios. For
+            example, POJO containers that
+            store the results of processing user data, predicates that filter data placed in database and so on.
+
+        <div class="row mt-4 justify-content-between samples">
+            <div class="samples__text-wrapper col-lg-5 col-md-12 pr-5">
+                <div class="features__text mb-2">Imagine that a service needs to find all adult users in its system.
+                    It produces such query to the database:
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12">
+                <figure class="highlight m-0"><pre><code class="language-sql" data-lang="sql"><span
+                        class="k">SELECT</span> <span
+                        class="n">id</span><span class="p">,</span> <span class="n">name</span><span
+                        class="p">,</span> <span class="n">age</span> <span class="k">FROM</span> <span
+                        class="n">users</span> <span
+                        class="k">WHERE</span> <span class="n">age</span> <span class="o">&gt;=</span> <span
+                        class="mi">18</span><span class="p">;</span></code></pre>
+                </figure>
+            </div>
+        </div>
+
+        <div class="row mt-4 justify-content-between samples">
+            <div class="samples__text-wrapper col-lg-5 col-md-12 pr-5">
+                <div class="features__text mb-2">First, it is necessary to build a data container class (POJO):
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12">
+                <figure class="highlight m-0"><pre><code class="language-java" data-lang="java"><span
+                        class="kd">class</span> <span class="nc">User</span> <span class="o">{</span>
+      <span class="kt">long</span> <span class="n">id</span><span class="o">;</span>
+      <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+      <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+<span class="o">}</span></code></pre>
+                </figure>
+            </div>
+        </div>
+
+
+        <div class="row mt-4 justify-content-between samples">
+            <div class="samples__text-wrapper col-lg-5 col-md-12 pr-5">
+                <div class="features__text mb-2">The process of a new class generation is simple and minimalistic.
+                    Use the builder pattern to produce
+                    the fields and methods of a new class:
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12">
+                <figure class="highlight m-0"><pre><code class="language-java" data-lang="java"><span
+                        class="n">Class</span><span
+                        class="o">&lt;?&gt;</span> <span class="n">userClass</span> <span class="o">=</span> <span
+                        class="n">ClassBuilder</span><span class="o">.</span><span class="na">create</span><span
+                        class="o">(</span><span class="n">Object</span><span class="o">.</span><span
+                        class="na">class</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">withField</span><span class="o">(</span><span class="err">“</span><span
+                            class="n">id</span><span class="err">”</span><span class="o">,</span> <span
+                            class="kt">long</span><span class="o">.</span><span class="na">class</span><span
+                            class="o">)</span>
+    <span class="o">.</span><span class="na">withField</span><span class="o">(</span><span class="err">“</span><span
+                            class="n">name</span><span class="err">”</span><span class="o">,</span> <span
+                            class="n">String</span><span
+                            class="o">.</span><span class="na">class</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">withField</span><span class="o">(</span><span class="err">“</span><span
+                            class="n">age</span><span class="err">”</span><span class="o">,</span> <span
+                            class="kt">int</span><span class="o">.</span><span class="na">class</span><span
+                            class="o">)</span>
+    <span class="o">.</span><span class="na">build</span><span class="o">()</span></code></pre>
+                </figure>
+            </div>
+        </div>
+
+        <div class="row mt-4 justify-content-between samples">
+            <div class="samples__text-wrapper col-lg-5 col-md-12 pr-5">
+                <div class="features__text mb-2">Now let’s move on to the predicate generation:
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12">
+                <figure class="highlight m-0"><pre><code class="language-java" data-lang="java"><span
+                        class="kd">class</span> <span class="nc">UserPredicate</span> <span
+                        class="kd">implements</span> <span
+                        class="n">Predicate</span><span class="o">&lt;</span><span class="n">User</span><span
+                        class="o">&gt;</span> <span
+                        class="o">{</span>
+    <span class="kt">boolean</span> <span class="nf">test</span> <span class="o">(</span><span
+                            class="n">User</span> <span class="n">user</span><span class="o">)</span> <span
+                            class="o">{</span>
+        <span class="k">return</span> <span class="n">user</span><span class="o">.</span><span
+                            class="na">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span
+                            class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+                </figure>
+            </div>
+        </div>
+
+        <div class="row mt-4 justify-content-between samples">
+            <div class="samples__text-wrapper col-lg-5 col-md-12 pr-5">
+                <div class="features__text mb-2">Methods production is a little bit trickier.
+                    ActiveJ Codegen provides special expression DSL for method body generation:
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12">
+                <figure class="highlight m-0"><pre><code class="language-java" data-lang="java"><span
+                        class="n">Class</span><span
+                        class="o">&lt;</span><span class="n">Predicate</span><span class="o">&gt;</span> <span
+                        class="n">filter</span> <span class="o">=</span> <span class="n">ClassBuilder</span><span
+                        class="o">.</span><span class="na">create</span><span class="o">(</span><span
+                        class="n">Predicate</span><span
+                        class="o">.</span><span class="na">class</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">withMethod</span><span class="o">(</span><span class="err">“</span><span
+                            class="n">test</span><span class="err">”</span><span class="o">,</span> <span
+                            class="kt">boolean</span><span
+                            class="o">.</span><span class="na">class</span><span class="o">,</span> <span
+                            class="n">userClass</span><span
+                            class="o">,</span>
+                <span class="n">cmpGe</span><span class="o">(</span><span class="n">property</span><span
+                            class="o">(</span><span class="n">arg</span><span class="o">(</span><span
+                            class="mi">0</span><span class="o">),</span> <span class="err">“</span><span
+                            class="n">age</span><span class="err">”</span><span class="o">),</span> <span
+                            class="n">value</span><span
+                            class="o">(</span><span class="mi">18</span><span class="o">)))</span>
+    <span class="o">.</span><span class="na">build</span><span class="o">()</span></code></pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="paper__wrapper">
+    <div class="container features">
+        <h3 class="mx-3">Add ActiveJ Codegen to your project</h3>
+        <div class="samples__text-wrapper">
+            <div class="features__text mx-3"> You can add ActiveJ Codegen to your project by importing its Maven
+                repository.<br>
+                These docs cover the most recent ActiveJ Codegen release
+                <b>v4.3</b>
+                <small>(see on <a href="https://github.com/activej/activej/tree/v4.3/core-codegen">GitHub</a> or
+                    <a href="https://mvnrepository.com/artifact/io.activej/activej-codegen">Maven</a>)
+                </small>
+                .
+            </div>
+        </div>
+
+        <h3 class="mt-5 mx-3">Project Background</h3>
+        <p class="features__text mx-3">ActiveJ Codegen is one of the ActiveJ technologies that also include
+            cloud solutions, lightning-fast serializers, dependency injection and other technologies.
+            To learn more about ActiveJ technologies, visit <a href="https://activej.io">ActiveJ</a> website.<br><br>
+        </p>
+    </div>
+</div>
+        
+        <div class="container justify-content-between footer">
+            <div class="col-md-4 col-lg-5"> &copy; 2021 ActiveJ LLC. All Rights Reserved</div>
+            <div class="col-md-4 col-lg-3">Contact us: contact@activej.io</div>
+            <div class="col-md-8 col-lg-4 footer__menu">
+                <a href="http://uikernel.io">UIKernel</a>
+                <a href="https://adkernel.com">AdKernel</a>
+                <a href="https://github.com/activej/activej">GitHub</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="../static/js/leon.js"></script>
+    <script src="../static/js/index.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous">
+    </script>
+</body>
+</html>
